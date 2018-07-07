@@ -6,6 +6,10 @@ const User = require('./models/users.js');
 const mongoose = require('mongoose');
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/grocery_app'
 
+
+app.use( express.static( 'public' ) );
+
+
 console.log('this works');
 
 
