@@ -8,9 +8,16 @@ const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/grocery_a
 console.log('this works');
 
 
+const userController = require('./controllers/users.js');
+app.use(userController);
+
+
 app.get('/', (req, res)=>{
-  res.send('hi');
+  res.render("index.ejs");
 })
+
+
+app
 
 app.listen(PORT, ()=>{
   console.log('hi');
