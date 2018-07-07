@@ -14,7 +14,7 @@ console.log('this works');
 
 
 const userController = require('./controllers/users.js');
-app.use(userController);
+app.use('/users', userController);
 
 
 app.get('/', (req, res)=>{
