@@ -2,17 +2,26 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const User = require('./models/users.js');
+const Stray = require('./models/strays.js');
+const bcryptjs = require('bcryptjs');
 
+
+/// Mongoose Connection and DB generator
 const mongoose = require('mongoose');
-const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/grocery_app'
+/// Body Parser
+app.use(express.urlencoded({extended:false}));
 
-
+/// Public folder access
 app.use( express.static( 'public' ) );
 
 
-console.log('this works');
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/grocery_app';
+mongoose.connect(mongoURI, { useNewUrlParser: true },
+  () => console.log('MongoDB connection established:', mongoURI)
+)
 
 
+/// User controller access
 const userController = require('./controllers/users.js');
 app.use('/users', userController);
 
@@ -71,12 +80,37 @@ app.get('/seed/new', (req, res)=>{
    )
 })
 
+app.get('/seed/strays', (req, res)=>{
+  Stray.create(
+    [
+      {
+        name: 'Patches',
+        breed: 'Cat',
+        age: 5,
+        color: 'black and white',
+        img: 'http://www.thepurringtonpost.com/wp-content/uploads/2016/09/cowcat.jpg'
+      },
+      {
+        name: 'Grub',
+        breed: 'Cat',
+        age: 1,
+        color: 'grey',
+        img: 'https://i.ebayimg.com/00/s/MTAyNFg3Njg=/z/vzoAAOSw3ZRZAPe4/$_86.JPG'
+      }
+    ],
+    (err, data)=>{
+               res.redirect('/');
+           }
+     )
+});
+
 
 app.listen(PORT, ()=>{
   console.log('hi');
 })
 
-mongoose.connect(mongoURI, {useNewUrlParser: true});
+
+
 mongoose.connection.on('open', ()=>{
   console.log('you are connected to mongoose')
 })

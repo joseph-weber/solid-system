@@ -7,16 +7,22 @@
     <title></title>
   </head>
   <body>
-    <form action="/users" method="POST">
-      Username: <input type="text" name="username" placeholder="username"/>
-      Password: <input type="password" name="password"/>
-      Name: <input type="text" name="name" placeholder="Your Name Here"/>
-      Hours: <input type="text" name="hours" placeholder="hours separated by commas"/>
-      Work w/ Cats: <input type="checkbox" name="catPref"/>
-      Work w/ Dogs: <input type="checkbox" name="dogPref"/>
-      Will foster? <input type="checkbox" name="foster"/>
-      Currently Fostering: <input type="text" name="fostering" placeholder="hours separated by commas"/>
-    </form>
+    <div class="new-volunteer">
+      <h2>New Volunteer Info</h2>
+      <div class="volunteer-form">
+        <form action="/users" method="POST">
+          Username: <input type="text" name="username" placeholder="username"/>
+          Password: <input type="password" name="password"/>
+          Name: <input type="text" name="name" placeholder="Your Name Here"/>
+          Hours: <input type="text" name="hours" placeholder="hours separated by commas"/>
+          Work w/ Cats: <input type="checkbox" name="catPref"/>
+          Work w/ Dogs: <input type="checkbox" name="dogPref"/>
+          Will foster? <input type="checkbox" name="fosterAble"/>
+          Currently Fostering: <input type="text" name="fostering" placeholder="pets separated by commas"/>
+          <input type="submit" value="submit">
+        </form>
+  </div>
+</div>
 
   </body>
 </html>

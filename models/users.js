@@ -9,7 +9,8 @@ const userSchema = mongoose.Schema({
   dogPref: Boolean,
   fosterAble: Boolean,
   fostering: Array
-})
+},
+{timestamps: true})
 
 const User = mongoose.model('User', userSchema);
 
