@@ -5,14 +5,6 @@ body {
   margin: 0 auto;
 }
 
-.nav {
-  background: linear-gradient(white, rgb(158, 220, 249));
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-  padding: 0;
-  border: 1px solid purple;
-}
 
 #buttons {
   text-align: left;
@@ -56,6 +48,27 @@ input {
   display: block;
   margin: 10px 0;
   text-align: center;
+}
+
+#friends {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.new-friend {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px black;
+  margin: 10px;
+}
+
+.new-friend img {
+  display: flex;
+  margin: 20px;
+  height: 200px;
+  width: 200px;
 }
 
 /* body {

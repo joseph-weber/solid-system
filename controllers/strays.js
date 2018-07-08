@@ -13,6 +13,16 @@ router.get('/', (req, res)=>{
 });
 });
 
+router.get('/new', (req, res)=>{
+  res.render('strays/new.ejs');
+});
+
+router.post('/', (req, res)=>{
+  Stray.create(req.body, (err, newStray)=>{
+    res.redirect('/');
+  })
+})
+
 
 
 module.exports = router;

@@ -3,20 +3,24 @@
   <head>
     <link rel="stylesheet" href="show.css">
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <% include ../partials/head.ejs %>
     <title></title>
   </head>
   <body>
-    <% console.log(strays) %>
-    <%  for(let i = 0; i < strays.length; i++){%>
-        <div>
-        <h1> <%= strays[i].name %> </h1>
-        <a href="#"><img src="<%= strays[i].img %>"></a>
-        <ul>
-          <li><%= strays[i].breed %></li>
-          <li><%= strays[i].age %></li>
-          <li><%= strays[i].color %></li>
-        </ul>
-        </div>
-    <%  } %>
+    <div class="container">
+      <% console.log(strays) %>
+      <%  for(let i = 0; i < strays.length; i++){%>
+          <div class="content">
+          <h1> <%= strays[i].name %> </h1>
+          <a href="#"><img class="stray-image" src="<%= strays[i].img %>"></a>
+          <ul>
+            <li><%= strays[i].breed %></li>
+            <li><%= strays[i].age %></li>
+            <li><%= strays[i].color %></li>
+          </ul>
+          </div>
+      <%  } %>
+    </div>
   </body>
 </html>

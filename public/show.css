@@ -1,8 +1,11 @@
 body {
+  font-family: 'Merriweather', serif;
+}
+.container {
   display: flex;
 }
 
-div {
+.content {
   height: 400px;
   display: flex;
   width: 25%;
@@ -12,7 +15,7 @@ div {
   margin: 20px;
 }
 
-img {
+.stray-image {
   height: 200px;
   width: 200px;
 }

@@ -60,3 +60,12 @@ form {
   background-image: linear-gradient(to bottom, #12ebeb, #a0dede);
   text-decoration: none;
 }
+
+.nav {
+  background: linear-gradient(white, rgb(158, 220, 249));
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  border: 1px solid purple;
+}
