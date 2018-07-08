@@ -1,0 +1,18 @@
+body {
+  display: flex;
+}
+
+div {
+  height: 400px;
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  border: 1px dotted black;
+  align-items: center;
+  margin: 20px;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+}

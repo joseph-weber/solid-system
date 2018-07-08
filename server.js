@@ -25,6 +25,10 @@ mongoose.connect(mongoURI, { useNewUrlParser: true },
 const userController = require('./controllers/users.js');
 app.use('/users', userController);
 
+/// Stray controller access
+const strayController = require('./controllers/strays.js');
+app.use('/strays', strayController);
+
 
 app.get('/', (req, res)=>{
   res.render("index.ejs");
