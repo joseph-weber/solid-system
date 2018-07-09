@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" href="show.css">
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link rel="stylesheet" href="/header.css">
+    <link rel="stylesheet" href="/main.css">
     <% include ../partials/head.ejs %>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <title></title>
   </head>
   <body>
-    <div class="container">
-    <form action="/strays" method="POST">
-      <input type="text" name="name" placeholder="name">
-      <input type="text" name="breed" placeholder="breed">
-      <input type="number" name="age" placeholder="age">
-      <input type="text" name="color" placeholder="color">
-      <input type="text" name="img" placeholder="image link">
-      <input type="submit" value="New Pet">
-    </form>
-  </div>
-
+    <div id="new-stray">
+      <h1>Input New Stray Info</h1>
+      <div id="stray-form">
+        <form class action="/strays" method="POST">
+          <input type="text" name="name" placeholder="name">
+          <input type="text" name="breed" placeholder="breed">
+          <input type="number" name="age" placeholder="age">
+          <input type="text" name="color" placeholder="color">
+          <input type="text" name="img" placeholder="image link">
+          <input type="submit" value="New Pet">
+        </form>
+      </div>
+    </div>
   </body>
 </html>

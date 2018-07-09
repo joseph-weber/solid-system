@@ -10,16 +10,18 @@ body {
   text-align: left;
 }
 
-.new-volunteer {
+.new-volunteer, #new-stray {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 40px auto;
   width: 40%;
-  background: linear-gradient(green, white);
+  background: white;
   border-radius: 10px;
   justify-content: center;
   border: 1px solid blue;
+  text-align: center;
 }
+
 .new-volunteer h2 {
     text-align: center;
 }
@@ -27,7 +29,7 @@ h1 {
   text-align: center;
 }
 
-.volunteer-form {
+.volunteer-form, #stray-form {
   display: flex;
   justify-content: center;
   color: black;
@@ -48,6 +50,7 @@ input {
   display: block;
   margin: 10px 0;
   text-align: center;
+  border: 1px solid black;
 }
 
 #friends {
