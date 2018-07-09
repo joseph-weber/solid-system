@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const User = require('./models/users.js');
-const Stray = require('./models/strays.js');
+const Stray = require('/models/strays.js');
 const bcryptjs = require('bcryptjs');
 const methodOverride = require('method-override');
 
@@ -36,7 +36,12 @@ app.use('/strays', strayController);
 
 
 app.get('/', (req, res)=>{
-res.send('hello');
+  Stray.find({}, (err, foundStrays)=>{
+  res.render('index.ejs',
+{
+  strays : foundStrays
+})
+});
 });
 
 app.get('/seed/new', (req, res)=>{
