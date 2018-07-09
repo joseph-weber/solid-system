@@ -33,3 +33,11 @@ div img {
 div {
   padding: 5px;
 }
+
+#showbuttons{
+  display: flex;
+}
+
+#showbuttons button {
+  margin: 0 10px;
+}

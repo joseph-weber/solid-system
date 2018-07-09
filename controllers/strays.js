@@ -74,6 +74,12 @@ router.post('/', (req, res)=>{
   })
 });
 
+router.delete('/:id', (req, res)=>{
+  Stray.findByIdAndRemove(req.params.id, (err, deletedItem)=>{
+    res.redirect('/strays')
+  });
+});
+
 
 
 module.exports = router;

@@ -10,12 +10,21 @@
 <body>
   <h1>Meet Our Two Newest furriends</h1>
 <div id="friends">
+  <% if(strays.length > 1){ %>
   <% for(let i = strays.length -1; i > strays.length -3; i--) { %>
     <div class="new-friend">
       <h2> <%= strays[i].name %> </h2>
       <a href="strays/<%=strays[i].id%>"><img src="<%= strays[i].img %>"></a>
     </div>
   <% } %>
+  <% } else { %>
+  <% for(let i = 0; i < strays.length; i++){ %>
+    <div class="new-friend">
+      <h2> <%= strays[i].name %> </h2>
+      <a href="strays/<%=strays[i].id%>"><img src="<%= strays[i].img %>"></a>
+    </div>
+<%   } %>
+<% } %>
 </div>
 </body>
 </html>

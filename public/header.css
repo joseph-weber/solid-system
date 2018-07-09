@@ -33,7 +33,7 @@ form {
   display: auto;
 }
 
-.btn {
+button {
   margin-top: 20px;
   background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #11496b);
@@ -52,7 +52,7 @@ form {
   text-decoration: none;
 }
 
-.btn:hover {
+button:hover {
   background: #12ebeb;
   background-image: -webkit-linear-gradient(top, #12ebeb, #a0dede);
   background-image: -moz-linear-gradient(top, #12ebeb, #a0dede);
