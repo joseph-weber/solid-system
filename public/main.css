@@ -60,7 +60,7 @@ input {
 }
 
 .new-friend {
-  background: white;
+  background: linear-gradient(white, rgb(158, 220, 249));
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -74,6 +74,44 @@ input {
   height: 200px;
   width: 200px;
   box-shadow: 0 0 5px black;
+}
+
+#about-us-container {
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px auto;
+  box-shadow: 0 0 2px black;
+  padding-bottom: 30px;
+  background: linear-gradient(white, rgb(158, 220, 249));
+}
+
+#about-us-container img {
+  width: 400px;
+}
+
+#about-us-container p {
+  margin: 20px auto;
+  width: 90%;
+  text-align: left;
+}
+#welcome {
+  display: flex;
+  width: 20%;
+  margin: 20px auto;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 5px black;
+  background: linear-gradient(white, rgb(158, 220, 249));
+}
+#user-homepage {
+  text-align: center;
+  color: blue;
+}
+
+#user-homepage:hover {
+  color: white;
 }
 
 /* body {

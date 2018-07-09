@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const straySchema = mongoose.Schema({
+const straySchema = Schema({
   name: String,
   breed: String,
   age: Number,

@@ -25,12 +25,14 @@ router.post('/', (req, res) => {
   } else {
     req.body.fosterAble = false;
   };
+  req.body.password = bcryptjs.hashSync(req.body.password, bcryptjs.genSaltSync(10));
   User.create(req.body, (error, createdUser)=>{
     res.redirect('/');
     console.log(req.body);
     console.log(createdUser);
   })
 });
+
 
 // router.post('/', (req, res)=>{
 //   req.body.password = bcryptjs.hashSync(req.body.password, bcryptjs.genSaltSync(10));

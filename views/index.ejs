@@ -8,7 +8,14 @@
     <title></title>
   </head>
 <body>
-  <h1>Meet Our Two Newest furriends</h1>
+  <div id="welcome">
+  <% if(currentUser){ %>
+  <h1>Welcome <%= currentUser.name %></h1>
+  <% console.log(currentUser._id)%>
+  <a id="user-homepage" href="/sessions/<%=currentUser._id%>"%>>Your Homepage</a>
+  <% } %>
+</div>
+  <h1>Meet Our Newest furriends</h1>
 <div id="friends">
   <% if(strays.length > 1){ %>
   <% for(let i = strays.length -1; i > strays.length -3; i--) { %>
