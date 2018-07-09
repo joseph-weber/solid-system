@@ -56,7 +56,11 @@ app.get('/', (req, res)=>{
 });
 
 app.get('/aboutus', (req, res)=>{
-  res.render('about-us.ejs');
+  res.render('about-us.ejs',
+  {
+  currentUser: req.session.currentuser
+}
+);
 });
 
 

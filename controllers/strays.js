@@ -15,7 +15,11 @@ router.get('/', (req, res)=>{
 });
 
 router.get('/new', (req, res)=>{
-  res.render('strays/new.ejs');
+  res.render('strays/new.ejs',
+  {
+    currentUser: req.session.currentuser
+  }
+);
 });
 
 router.get('/seed', (req, res)=>{
@@ -57,7 +61,8 @@ router.get('/:id/edit', (req, res)=>{
   Stray.findOne({_id: req.params.id}, (err, foundStray)=>{
     res.render('strays/edit.ejs',
   {
-    stray: foundStray
+    stray: foundStray,
+    currentUser: req.session.currentuser
   }
 )
 });

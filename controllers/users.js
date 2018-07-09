@@ -5,7 +5,11 @@ const User = require('../models/users.js');
 
 
 router.get('/new', (req, res)=>{
-  res.render('users/new.ejs');
+  res.render('users/new.ejs',
+  {
+    currentUser: req.session.currentuser
+  }
+);
 });
 
 router.post('/', (req, res) => {

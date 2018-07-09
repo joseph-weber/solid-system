@@ -18,7 +18,8 @@
       <li><%= stray.age %></li>
       <li><%= stray.color %></li>
     </ul>
-    <% if(currentUser.Admin === true){ %>
+    <% if(currentUser){ %>
+    <% if(currentUser.Admin === true){  %>
     <div id="showbuttons">
       <a href="/strays/<%= stray.id %>/edit"><button class="btn" type="button" name="button">Edit</button></a>
       <form method="Post" action="/strays/<%=stray.id%>?_method=DELETE" method='POST'>
@@ -26,6 +27,7 @@
       </form>
     </div>
     <% } %>
+  <% } %>
   </div>
   </body>
 </html>

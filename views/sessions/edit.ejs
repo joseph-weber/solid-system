@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../header.css">
+    <link rel="stylesheet" href="../../main.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <% include ../partials/head.ejs %>
+    <div id="new-volunteer">
+      <h2>Edit Volunteer Account</h2>
+      <div class="volunteer-form">
+        <form action="/users" method="POST">
+          Username: <input type="text" name="username" placeholder="<%=user.username%>"/>
+          Password: <input type="password" name="password"/>
+          Name: <input type="text" name="name" placeholder='<%=user.name%>'/>
+          Hours: <input type="text" name="hours" placeholder="hours separated by commas"/>
+          Work w/ Cats: <input type="checkbox" name="catPref"/>
+          Work w/ Dogs: <input type="checkbox" name="dogPref"/>
+          Will foster? <input type="checkbox" name="fosterAble"/>
+          Currently Fostering: <input type="text" name="fostering" placeholder="<%=user.fostering%>"/>
+          <input type="submit" value="submit">
+        </form>
+  </div>
+</div>
+
+  </body>
+</html>

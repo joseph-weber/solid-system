@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./header.css">
-  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
-    <title></title>
-  </head>
-  <body>
     <div id="header">
         <div class="left">Welcome to Pawsibilities Animal Shelter</div>
         <div id="buttons">
+          <% if(currentUser === undefined) { %>
           <a href="/users/new"><button class="btn" type="button" name="button">New Account</button></a>
           <a href="/sessions/new"><button type="button" name="button" class="btn">Log In</button></a>
+          <% } else { %>
+          <form action="/sessions?_method=DELETE" method="POST">
+            <input id="logout" type="submit" value="Logout"/>
+          </form>
+          <% } %>
         </div>
     </div>
     <nav class="nav">
@@ -21,5 +18,4 @@
       <a href="#">Donate</a>|
       <a href="#">Friends</a>
     </nav>
-  </body>
-</html>
+  </div>

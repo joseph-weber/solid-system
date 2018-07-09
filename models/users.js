@@ -12,6 +12,7 @@ const userSchema = Schema({
   fostering: Array,
   Admin: Boolean
 },
+
 {timestamps: true})
 
 const User = mongoose.model('User', userSchema);
