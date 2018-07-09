@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link rel="stylesheet" href="show.css">
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <% include ../partials/head.ejs %>
     <title></title>
   </head>
   <body>
+    <div class="container">
     <form action="/strays" method="POST">
       <input type="text" name="name" placeholder="name">
       <input type="text" name="breed" placeholder="breed">
@@ -13,6 +17,7 @@
       <input type="text" name="img" placeholder="image link">
       <input type="submit" value="New Pet">
     </form>
+  </div>
 
   </body>
 </html>
