@@ -18,7 +18,7 @@ body {
   box-shadow: 0 0 5px black;
   align-items: center;
   margin: 20px;
-  background: white;
+  background: linear-gradient(white, rgb(158, 220, 249));
   border-radius: 10px;
 }
 

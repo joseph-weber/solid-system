@@ -9,7 +9,8 @@ const userSchema = Schema({
   catPref: Boolean,
   dogPref: Boolean,
   fosterAble: Boolean,
-  fostering: Array
+  fostering: Array,
+  Admin: Boolean
 },
 {timestamps: true})
 

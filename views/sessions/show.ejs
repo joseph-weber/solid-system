@@ -3,10 +3,20 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../main.css">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <% include ../partials/head.ejs %>
   </head>
   <body>
+    <div id="container">
+      <h1><%=user.name%>'s Page</h1>
+      <ul>
+        <li>Your availability hours are: <%=user.hours%></li>
+        <li>Openness to cats: <%=user.catPref%></li>
+        <li>Openness to dogs: <%=user.dogPref%></li>
+        <li>Openness to fostering: <%=user.fosterAble%></li>
+        <li>You are currently fostering: <%=user.fostering%></li>
+    </div>
 
   </body>
 </html>

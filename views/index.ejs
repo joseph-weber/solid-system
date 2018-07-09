@@ -8,13 +8,6 @@
     <title></title>
   </head>
 <body>
-  <div id="welcome">
-  <% if(currentUser){ %>
-  <h1>Welcome <%= currentUser.name %></h1>
-  <% console.log(currentUser._id)%>
-  <a id="user-homepage" href="/sessions/<%=currentUser._id%>"%>>Your Homepage</a>
-  <% } %>
-</div>
   <h1>Meet Our Newest furriends</h1>
 <div id="friends">
   <% if(strays.length > 1){ %>
@@ -31,6 +24,16 @@
       <a href="strays/<%=strays[i].id%>"><img src="<%= strays[i].img %>"></a>
     </div>
 <%   } %>
+<% } %>
+</div>
+<div id="welcome">
+<% if(currentUser){ %>
+<h1>Welcome <%= currentUser.name %></h1>
+<% console.log(currentUser._id)%>
+<a id="user-homepage" href="/sessions/<%=currentUser._id%>"%>>Your Homepage</a>
+<form action="/sessions?_method=DELETE" method="POST">
+  <input type="submit" value="Logout"/>
+</form>
 <% } %>
 </div>
 </body>

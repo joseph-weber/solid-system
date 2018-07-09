@@ -8,7 +8,8 @@ router.get('/', (req, res)=>{
   Stray.find({}, (err, foundStrays)=>{
   res.render('strays/index.ejs',
 {
-  strays : foundStrays
+  strays : foundStrays,
+  currentUser: req.session.currentuser
 })
 });
 });
@@ -45,7 +46,8 @@ router.get('/:id', (req, res)=>{
   Stray.findOne({_id: req.params.id}, (err, foundStray)=>{
   res.render('strays/show.ejs',
   {
-    stray: foundStray
+    stray: foundStray,
+    currentUser: req.session.currentuser
   }
 )
 })

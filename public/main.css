@@ -10,7 +10,7 @@ body {
   text-align: left;
 }
 
-.new-volunteer, #new-stray {
+#new-volunteer, #new-stray {
   display: flex;
   flex-direction: column;
   margin: 40px auto;
@@ -88,7 +88,7 @@ input {
 }
 
 #about-us-container img {
-  width: 400px;
+  width: 90%;
 }
 
 #about-us-container p {
@@ -114,6 +114,24 @@ input {
   color: white;
 }
 
+#container {
+  margin: 50px auto;
+  width: 30%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 5px black;
+}
+
+#container ul {
+list-style-type: none;
+padding-left: 0;
+}
+
+#container li {
+text-align: left;
+}
 /* body {
   background-color: red;
 } */
