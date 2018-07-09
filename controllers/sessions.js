@@ -30,7 +30,8 @@ router.get('/:id', (req, res)=>{
   User.findOne({_id: req.params.id}, (err, foundUser)=>{
   res.render('sessions/show.ejs',
   {
-    user: foundUser
+    user: foundUser,
+    currentUser: req.session.currentuser
   }
 )
 });

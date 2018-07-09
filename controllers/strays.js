@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcryptjs = require('bcryptjs');
 const Stray = require('../models/strays.js');
-
+const User = require('../models/users.js');
 
 router.get('/', (req, res)=>{
   Stray.find({}, (err, foundStrays)=>{
@@ -23,6 +23,10 @@ router.get('/new', (req, res)=>{
 });
 
 router.get('/seed', (req, res)=>{
+  Stray.deleteMany({name: 'Patches'}, (err, patches)=>
+console.log('Patches'));
+  Stray.deleteMany({name: 'Grub'}, (err, grub)=>
+console.log('Grub'));
   Stray.create(
     [
       {
@@ -44,7 +48,7 @@ router.get('/seed', (req, res)=>{
                res.redirect('/');
            }
      )
-});
+   });
 
 router.get('/:id', (req, res)=>{
   Stray.findOne({_id: req.params.id}, (err, foundStray)=>{
@@ -85,6 +89,18 @@ router.delete('/:id', (req, res)=>{
   Stray.findByIdAndRemove(req.params.id, (err, deletedItem)=>{
     res.redirect('/strays')
   });
+});
+
+router.post('/:id/foster', (req, res)=>{
+  User.findById(req.session.currentuser._id, (err, currentUser)=>{
+  Stray.findById(req.params.id, (err, fosterPet)=>{
+    console.log(currentUser);
+    currentUser.fostering.push(fosterPet.name)
+    console.log(fosterPet.name);
+    console.log(currentUser.fostering)
+    res.redirect('/strays')
+  });
+})
 });
 
 

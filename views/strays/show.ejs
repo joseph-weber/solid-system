@@ -25,6 +25,9 @@
       <form method="Post" action="/strays/<%=stray.id%>?_method=DELETE" method='POST'>
         <button id="strayButton" type="submit">Adopted</button>
       </form>
+      <form method="Post" action="/strays/<%=stray.id%>/foster" method='POST'>
+        <button id="foster" type="submit">Foster</button>
+      </form>
     </div>
     <% } %>
   <% } %>
