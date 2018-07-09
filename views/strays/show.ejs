@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/show.css">
+    <link rel="stylesheet" href="/header.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <% include ../partials/head.ejs %>
+    <title></title>
+  </head>
+  <body>
+  <%  console.log(stray) %>
+  <div class="container">
+    <h1><%= stray.name %></h1>
+    <img src="<%=stray.img%>">
+    <ul>
+      <li><%= stray.breed %></li>
+      <li><%= stray.age %></li>
+      <li><%= stray.color %></li>
+    </ul>
+    <div id="buttons">
+      <a href="/strays/<%= stray.id %>/edit"><button class="btn" type="button" name="button">Edit</button></a>
+      <a href="/strays/<%= stray.id %>"><button type="button" name="button" class="btn">Stray Adopted</button></a>
+    </div>
+  </div>
+  </body>
+</html>

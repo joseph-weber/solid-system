@@ -4,6 +4,11 @@ const PORT = process.env.PORT || 3000;
 const User = require('./models/users.js');
 const Stray = require('./models/strays.js');
 const bcryptjs = require('bcryptjs');
+const methodOverride = require('method-override');
+
+
+// middleware
+app.use(methodOverride('_method'));
 
 
 /// Mongoose Connection and DB generator
@@ -30,13 +35,8 @@ const strayController = require('./controllers/strays.js');
 app.use('/strays', strayController);
 
 
-app.get('/welcome', (req, res)=>{
-  Stray.find({}, (err, foundStrays)=>{
-  res.render('index.ejs',
-{
-  strays : foundStrays
-})
-});
+app.get('/', (req, res)=>{
+res.send('hello');
 });
 
 app.get('/seed/new', (req, res)=>{

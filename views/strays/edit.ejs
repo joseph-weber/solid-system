@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/header.css">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <% include ../partials/head.ejs %>
+    <title></title>
+  </head>
+  <body>
+  <div id="new-stray">
+    <h1>Input New Stray Info</h1>
+    <div id="stray-form">
+      <form class action="/strays/<%=stray.id%>?_method=PUT" method="POST">
+        <input type="text" name="name" placeholder="<%=stray.name%>">
+        <input type="text" name="breed" placeholder="<%=stray.breed%>">
+        <input type="number" name="age" placeholder="<%=stray.age%>">
+        <input type="text" name="color" placeholder="<%=stray.color%>">
+        <input type="text" name="img" placeholder="<%=stray.img%>">
+        <input type="submit" value="New Pet">
+      </form>
+    </div>
+  </div>
+  </body>
+</html>

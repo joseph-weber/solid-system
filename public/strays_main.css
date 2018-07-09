@@ -4,32 +4,36 @@ body {
   min-width: 931px;
   margin: 0 auto;
 }
-
 .container {
+  justify-content: center;
   display: flex;
+  flex-wrap: wrap;
+}
+
+.content {
+  height: 400px;
+  display: flex;
+  width: 355px;
   flex-direction: column;
-  align-items: center;
-  background: white;
-  height: 500px;
-  margin: 40px auto;
-  width: 40%;
-  border-radius: 50px;
   box-shadow: 0 0 5px black;
+  align-items: center;
+  margin: 20px;
+  background: white;
+  border-radius: 10px;
+}
+
+.stray-image {
+  height: 200px;
+  width: 200px;
+  box-shadow: 0 0 5px black;
+}
+
+h1 {
+  text-align: center;
 }
 
 ul {
   list-style-type: none;
   padding-left: 0;
   text-align: center;
-}
-
-
-div img {
-  height: 250px;
-  width: 250px;
-  box-shadow: 0 0 5px black;
-}
-
-div {
-  padding: 5px;
 }

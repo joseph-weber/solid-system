@@ -17,11 +17,38 @@ router.get('/new', (req, res)=>{
   res.render('strays/new.ejs');
 });
 
+router.get('/:id', (req, res)=>{
+  Stray.findOne({_id: req.params.id}, (err, foundStray)=>{
+  res.render('strays/show.ejs',
+  {
+    stray: foundStray
+  }
+)
+})
+});
+
+router.get('/:id/edit', (req, res)=>{
+  Stray.findOne({_id: req.params.id}, (err, foundStray)=>{
+    res.render('strays/edit.ejs',
+  {
+    stray: foundStray
+  }
+)
+});
+});
+
+router.put('/:id', (req, res)=>{
+  Stray.findOneAndUpdate({_id: req.params.id}, req.body, {new:true}, (err, updatedItem)=>{
+    res.redirect('/strays')
+});
+});
+
+
 router.post('/', (req, res)=>{
   Stray.create(req.body, (err, newStray)=>{
     res.redirect('/');
   })
-})
+});
 
 
 

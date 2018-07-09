@@ -13,7 +13,7 @@
   <% for(let i=strays.length -2; i< strays.length; i++) { %>
     <div class="new-friend">
       <h2> <%= strays[i].name %> </h2>
-      <a href="#"><img src="<%= strays[i].img %>"></a>
+      <a href="strays/<%=strays[i].id%>"><img src="<%= strays[i].img %>"></a>
     </div>
   <% } %>
 </div>

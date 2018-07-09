@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" href="/show.css">
+    <link rel="stylesheet" href="/strays_main.css">
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <% include ../partials/head.ejs %>
     <title></title>
   </head>
   <body>
+    <h1>Available for Adoption</h1>
     <div class="container">
       <% console.log(strays) %>
       <%  for(let i = 0; i < strays.length; i++){%>
           <div class="content">
-          <h1> <%= strays[i].name %> </h1>
-          <a href="#"><img class="stray-image" src="<%= strays[i].img %>"></a>
+          <h2> <%= strays[i].name %> </h2>
+          <a href="/strays/<%= strays[i].id %>"><img class="stray-image" src="<%= strays[i].img %>"></a>
           <ul>
-            <li><%= strays[i].breed %></li>
-            <li><%= strays[i].age %></li>
-            <li><%= strays[i].color %></li>
+            <li>Breed: <%= strays[i].breed %></li>
+            <li>Age: <%= strays[i].age %></li>
+            <li>Color: <%= strays[i].color %></li>
           </ul>
           </div>
       <%  } %>

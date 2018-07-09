@@ -60,6 +60,7 @@ input {
 }
 
 .new-friend {
+  background: white;
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -72,6 +73,7 @@ input {
   margin: 20px;
   height: 200px;
   width: 200px;
+  box-shadow: 0 0 5px black;
 }
 
 /* body {

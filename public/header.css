@@ -10,7 +10,8 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  max-width: 1200px;
+  min-width: 931px;
   justify-content: center;
   margin: 0 auto;
   background: url('https://www.bevlabvet.com/images/banner-img.jpg');
@@ -68,4 +69,5 @@ form {
   justify-content: space-around;
   padding: 0;
   border: 1px solid purple;
+  width: 100%;
 }
