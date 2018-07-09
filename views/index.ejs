@@ -10,7 +10,7 @@
 <body>
   <h1>Meet Our Two Newest furriends</h1>
 <div id="friends">
-  <% for(let i=0; i< strays.length; i++) { %>
+  <% for(let i = strays.length -1; i > strays.length -3; i--) { %>
     <div class="new-friend">
       <h2> <%= strays[i].name %> </h2>
       <a href="strays/<%=strays[i].id%>"><img src="<%= strays[i].img %>"></a>
