@@ -37,9 +37,12 @@ app.use('/strays', strayController);
 
 app.get('/', (req, res)=>{
   Stray.find({}, (err, foundStrays)=>{
-    res.render('index.ejs')
-  })
+  res.render('index.ejs',
+{
+  strays : foundStrays
 })
+});
+});
 
 app.get('/seed/new', (req, res)=>{
   User.create(
