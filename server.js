@@ -30,7 +30,7 @@ const strayController = require('./controllers/strays.js');
 app.use('/strays', strayController);
 
 
-app.get('/', (req, res)=>{
+app.get('/welcome', (req, res)=>{
   Stray.find({}, (err, foundStrays)=>{
   res.render('index.ejs',
 {
