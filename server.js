@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const User = require('./models/users.js');
-const Stray = require('/models/strays.js');
+const Stray = require('./models/strays.js');
 const bcryptjs = require('bcryptjs');
 const methodOverride = require('method-override');
 
@@ -37,12 +37,9 @@ app.use('/strays', strayController);
 
 app.get('/', (req, res)=>{
   Stray.find({}, (err, foundStrays)=>{
-  res.render('index.ejs',
-{
-  strays : foundStrays
+    res.render('index.ejs')
+  })
 })
-});
-});
 
 app.get('/seed/new', (req, res)=>{
   User.create(
@@ -93,30 +90,6 @@ app.get('/seed/new', (req, res)=>{
          }
    )
 })
-
-app.get('/seed/strays', (req, res)=>{
-  Stray.create(
-    [
-      {
-        name: 'Patches',
-        breed: 'Cat',
-        age: 5,
-        color: 'black and white',
-        img: 'http://www.thepurringtonpost.com/wp-content/uploads/2016/09/cowcat.jpg'
-      },
-      {
-        name: 'Grub',
-        breed: 'Cat',
-        age: 1,
-        color: 'grey',
-        img: 'https://i.ebayimg.com/00/s/MTAyNFg3Njg=/z/vzoAAOSw3ZRZAPe4/$_86.JPG'
-      }
-    ],
-    (err, data)=>{
-               res.redirect('/');
-           }
-     )
-});
 
 
 app.listen(PORT, ()=>{
