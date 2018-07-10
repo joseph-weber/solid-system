@@ -9,6 +9,12 @@
   </head>
 <body>
   <% include ./partials/head.ejs %>
+  <% if(currentUser) { %>
+    <div id="container">
+      <h1>Welcome, <%=currentUser.name%></h1>
+      <a id="user-homepage" href="/sessions/<%=currentUser._id%>"%>>Your Homepage</a>
+    </div>
+    <% } %>
   <h1>Meet Our Newest furriends</h1>
   <div id="friends">
     <% if(strays.length > 1){ %>
@@ -19,7 +25,7 @@
       </div>
     <% } %>
     <% } else { %>
-    <% for(let i = 0; i < strays.length; i++){ %>
+    <% for(let i = 0; i <= strays.length; i++){ %>
       <div class="new-friend">
         <h2> <%= strays[i].name %> </h2>
         <a href="strays/<%=strays[i].id%>"><img src="<%= strays[i].img %>"></a>
@@ -27,12 +33,6 @@
   <%   } %>
   <% } %>
   </div>
-  <div id="welcome">
-    <% if(currentUser){ %>
-    <h1>Welcome <%= currentUser.name %></h1>
-    <% console.log(currentUser._id)%>
-    <a id="user-homepage" href="/sessions/<%=currentUser._id%>"%>>Your Homepage</a>
-  <% } %>
   </div>
 </body>
 </html>

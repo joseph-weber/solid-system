@@ -59,7 +59,7 @@ router.get('/seed', (req, res)=>{
       catPref: true,
       dogPref: true,
       fosterAble: true,
-      fostering: ['Salmon'],
+      fostering: [],
       Admin: true
     },
     {
@@ -81,7 +81,7 @@ router.get('/seed', (req, res)=>{
       catPref: false,
       dogPref: false,
       fosterAble: false,
-      fostering: ['Erica'],
+      fostering: [],
       Admin: false
     }
   ],

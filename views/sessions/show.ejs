@@ -12,10 +12,33 @@
       <h1><%=user.name%>'s Page</h1>
       <ul>
         <li>Your availability hours are: <%=user.hours%></li>
-        <li>Openness to cats: <%=user.catPref%></li>
-        <li>Openness to dogs: <%=user.dogPref%></li>
-        <li>Openness to fostering: <%=user.fosterAble%></li>
-        <li>You are currently fostering: <%=user.fostering%></li>
+        <% if(user.catPref === true){ %>
+        <li>You are open to working with to cats<li>
+        <% } else { %>
+        <li>You are NOT open to working with to cats<li>
+        <% } %>
+        <% if(user.dogPref === true){ %>
+        <li>You are open to working with to dogs<li>
+        <% } else { %>
+        <li>You are NOT open to working with to dogs<li>
+        <% } %>
+        <% if(user.fosterAble === true){ %>
+        <li>You are open to fostering<li>
+        <% } else { %>
+        <li>You are NOT open to fostering<li>
+        <% } %>
+        <li>You are currently fostering:
+          <% if(user.fostering.length < 1){ %>
+          No animals
+        <% } else { %>
+          <% for(let i = 0; i< user.fostering.length; i++) { %>
+            <% if(i< user.fostering.length -1){ %>
+              <%=user.fostering[i].name%>,
+            <% } else { %>
+              <%=user.fostering[i].name%>
+            <% } %>
+          <% } %></li>
+          <% } %>
     </div>
 
   </body>

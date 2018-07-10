@@ -6,7 +6,8 @@ const straySchema = Schema({
   breed: String,
   age: Number,
   color: String,
-  img: String
+  img: String,
+  currentlyFostered: Boolean
 },
 {timestamps: true})
 

@@ -1,6 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+
+const Stray = new Schema({
+  name: String,
+  breed: String,
+  age: Number,
+  color: String,
+  img: String,
+  currentlyFostered: Boolean
+},
+{timestamps: true})
+
 const userSchema = Schema({
   username: String,
   password: String,
@@ -9,7 +20,7 @@ const userSchema = Schema({
   catPref: Boolean,
   dogPref: Boolean,
   fosterAble: Boolean,
-  fostering: [String],
+  fostering: [Stray],
   Admin: Boolean
 },
 {timestamps: true})

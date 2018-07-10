@@ -10,7 +10,7 @@ body {
   flex-direction: column;
   align-items: center;
   background: white;
-  height: 500px;
+  height: 520px;
   margin: 40px auto;
   width: 40%;
   border-radius: 50px;
@@ -40,4 +40,8 @@ div {
 
 #showbuttons button {
   margin: 0 10px;
+}
+
+p {
+  margin-top: 20px;
 }

@@ -63,6 +63,14 @@ app.get('/aboutus', (req, res)=>{
 );
 });
 
+app.get('/donate', (req, res)=>{
+  res.render('donate.ejs',
+  {
+  currentUser: req.session.currentuser
+}
+);
+});
+
 
 app.listen(PORT, ()=>{
   console.log('hi');

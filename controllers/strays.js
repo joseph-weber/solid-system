@@ -34,14 +34,16 @@ console.log('Grub'));
         breed: 'Cat',
         age: 5,
         color: 'black and white',
-        img: 'http://www.thepurringtonpost.com/wp-content/uploads/2016/09/cowcat.jpg'
+        img: 'http://www.thepurringtonpost.com/wp-content/uploads/2016/09/cowcat.jpg',
+        currentlyFostered: false
       },
       {
         name: 'Grub',
         breed: 'Cat',
         age: 1,
         color: 'grey',
-        img: 'https://i.ebayimg.com/00/s/MTAyNFg3Njg=/z/vzoAAOSw3ZRZAPe4/$_86.JPG'
+        img: 'https://i.ebayimg.com/00/s/MTAyNFg3Njg=/z/vzoAAOSw3ZRZAPe4/$_86.JPG',
+        currentlyFostered: false
       }
     ],
     (err, data)=>{
@@ -92,10 +94,9 @@ router.delete('/:id', (req, res)=>{
 });
 
 router.post('/:id/foster', (req, res)=>{
-  Stray.findById(req.params.id, (err, fosterPet)=>{
-    User.update({_id: req.session.currentuser._id}, {$push: {fostering: fosterPet.name}}, (err, currentUser)=>{
+  Stray.findOneAndUpdate({_id: req.params.id}, {$set: {currentlyFostered: true}},  (err, fosterPet)=>{
+    User.update({_id: req.session.currentuser._id}, {$push: {fostering: fosterPet}}, (err, currentUser)=>{
     console.log(currentUser);
-    console.log(fosterPet.name);
     console.log(currentUser.fostering);
     res.redirect('/strays')
   });
