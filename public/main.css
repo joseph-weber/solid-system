@@ -172,11 +172,3 @@ text-align: left;
 /* body {
   background-color: red;
 } */
-
-.footer {
-  width: 100%;
-  box-shadow: 0 0 5px black;
-  max-width: 1200px;
-  font-family: 'Merriweather', serif;
-  min-width: 931px;
-}

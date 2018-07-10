@@ -79,3 +79,23 @@ button:hover, #logout:hover {
   border: 1px solid purple;
   width: 100%;
 }
+
+.footer {
+  width: 100%;
+  box-shadow: 0 0 5px black;
+  max-width: 1200px;
+  font-family: 'Merriweather', serif;
+  min-width: 931px;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer a {
+  color: rgb(158, 220, 249);
+}
+
+.footer a:hover {
+  color: red;
+}
