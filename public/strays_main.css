@@ -19,7 +19,6 @@ body {
   align-items: center;
   margin: 20px;
   background: linear-gradient(white, rgb(158, 220, 249));
-  border-radius: 10px;
 }
 
 .stray-image {

@@ -6,8 +6,10 @@ const Stray = new Schema({
   name: String,
   breed: String,
   age: Number,
+  goodWithChildren: Boolean,
   color: String,
   img: String,
+  description: String,
   currentlyFostered: Boolean
 },
 {timestamps: true})

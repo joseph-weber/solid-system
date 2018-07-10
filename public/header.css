@@ -1,8 +1,15 @@
+html {
+  background: linear-gradient(white, rgb(158, 220, 249));
+}
+
 body {
   max-width: 1200px;
-  background-color: rgb(174, 144, 237);
-  margin: 0 auto;
+  font-family: 'Merriweather', serif;
   min-width: 931px;
+  margin: 0 auto;
+  box-shadow: 0 0 5px black;
+  background-color: snow;
+
 }
 
 #header {
@@ -17,6 +24,7 @@ body {
   background: url('https://www.bevlabvet.com/images/banner-img.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  /* box-shadow: 0 0 5px black; */
 }
 
 

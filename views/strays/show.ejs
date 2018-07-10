@@ -17,9 +17,14 @@
       <li><%= stray.breed %></li>
       <li><%= stray.age %></li>
       <li><%= stray.color %></li>
+      <% if (stray.goodWithChildren === false) { %>
+      <li>Not good with children</li>
+    <% } else { %>
+    <li>Great with children</li>
+  <% } %>
     </ul>
+    <p><%= stray.description %> </p>
     <% if(currentUser){ %>
-    <% if(currentUser.Admin === true){  %>
     <div id="showbuttons">
       <% if (stray.currentlyFostered === false) { %>
       <form method="Post" action="/strays/<%=stray.id%>/foster" method='POST'>
@@ -28,6 +33,7 @@
       <% } else { %>
       <br><p>Currently <br> Fostered </p>
     <% } %>
+    <% if(currentUser.Admin === true){  %>
       <form method="Post" action="/strays/<%=stray.id%>?_method=DELETE" method='POST'>
         <button id="strayButton" type="submit">Adopted</button>
       </form>

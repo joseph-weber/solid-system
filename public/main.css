@@ -1,8 +1,13 @@
+html {
+  background: linear-gradient(white, rgb(158, 220, 249));
+}
+
 body {
   max-width: 1200px;
   font-family: 'Merriweather', serif;
   min-width: 931px;
   margin: 0 auto;
+  box-shadow: 0 0 5px black;
 }
 
 
@@ -73,12 +78,14 @@ input {
 }
 
 .new-friend {
-  background: linear-gradient(white, rgb(158, 220, 249));
-  height: 300px;
+  height: 400px;
   display: flex;
+  width: 355px;
   flex-direction: column;
   box-shadow: 0 0 5px black;
-  margin: 10px;
+  align-items: center;
+  margin: 20px;
+  background: linear-gradient(white, rgb(158, 220, 249));
 }
 
 .new-friend img {
@@ -116,6 +123,7 @@ input {
   align-items: center;
   box-shadow: 0 0 5px black;
   background: linear-gradient(white, rgb(158, 220, 249));
+  text-align: left;
 }
 
 #container ul {
@@ -164,3 +172,11 @@ text-align: left;
 /* body {
   background-color: red;
 } */
+
+.footer {
+  width: 100%;
+  box-shadow: 0 0 5px black;
+  max-width: 1200px;
+  font-family: 'Merriweather', serif;
+  min-width: 931px;
+}

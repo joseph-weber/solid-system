@@ -27,22 +27,50 @@ router.get('/seed', (req, res)=>{
 console.log('Patches'));
   Stray.deleteMany({name: 'Grub', breed: 'Cat'}, (err, grub)=>
 console.log('Grub'));
+Stray.deleteMany({name: 'Mogli', breed: 'Dog'}, (err, grub)=>
+console.log('Grub'));
+Stray.deleteMany({name: 'Sam', breed: 'Cat'}, (err, grub)=>
+console.log('Grub'));
   Stray.create(
     [
       {
         name: 'Patches',
         breed: 'Cat',
         age: 5,
+        goodWithChildren: false,
         color: 'black and white',
         img: 'http://www.thepurringtonpost.com/wp-content/uploads/2016/09/cowcat.jpg',
+        description: "Patches is a mellow cat who enjoys the company of adults. Unfortunately due to Patches' years as a stray, she is not great with children. However, she will make the perfect companion for a low-energy household of adults. She loves to cuddle and and enjoys being brushed.",
+        currentlyFostered: false
+      },
+      {
+        name: 'Mogli',
+        breed: 'Dog',
+        age: 1,
+        goodWithChildren: true,
+        color: 'white',
+        img: 'https://i.pinimg.com/736x/d9/5e/8f/d95e8f2c371e358662ea30888f1f48c8--pomeranian-mix-child.jpg',
+        description: "Mogli is a great little buddy. He is always up for a walk.",
         currentlyFostered: false
       },
       {
         name: 'Grub',
         breed: 'Cat',
         age: 1,
+        goodWithChildren: true,
         color: 'grey',
         img: 'https://i.ebayimg.com/00/s/MTAyNFg3Njg=/z/vzoAAOSw3ZRZAPe4/$_86.JPG',
+        description: "Grub is a playful and curious little guy who loves playing and running around. He is excellent with children and has zero experience outside of our shelter, as he was born right here. Grub is looking for a forever home and would love to meet you.",
+        currentlyFostered: false
+      },
+      {
+        name: 'Sam',
+        breed: 'Cat',
+        age: 8,
+        goodWithChildren: true,
+        color: 'grey and black',
+        img: 'https://www.paws-and-effect.com/wp-content/uploads/2014/12/14776695716_0cb30c7ae0_z.jpg',
+        description: "Sam is a funny boy who loves to play. He is pretty relaxed during daytime hours and enjoys being pet at night.",
         currentlyFostered: false
       }
     ],
