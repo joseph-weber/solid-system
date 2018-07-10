@@ -3,6 +3,7 @@ body {
   font-family: 'Merriweather', serif;
   min-width: 931px;
   margin: 0 auto;
+  box-shadow: 0 0 5px black;
 }
 
 .container {
@@ -10,7 +11,7 @@ body {
   flex-direction: column;
   align-items: center;
   background: linear-gradient(white, rgb(158, 220, 249));
-  height: 700px;
+  height: 600px;
   margin: 40px auto;
   width: 40%;
   box-shadow: 0 0 5px black;
@@ -29,9 +30,9 @@ div img {
   box-shadow: 0 0 5px black;
 }
 
-div {
+/* div {
   padding: 5px;
-}
+} */
 
 #showbuttons{
   display: flex;
@@ -41,6 +42,6 @@ div {
   margin: 0 10px;
 }
 
-p {
+.show-p {
   margin-top: 20px;
 }

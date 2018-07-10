@@ -9,7 +9,6 @@
     <title></title>
   </head>
   <body>
-  <%  console.log(stray) %>
   <div class="container">
     <h1><%= stray.name %></h1>
     <img src="<%=stray.img%>">
@@ -23,7 +22,7 @@
     <li>Great with children</li>
   <% } %>
     </ul>
-    <p><%= stray.description %> </p>
+    <p class="show-p"><%= stray.description %> </p>
     <% if(currentUser){ %>
     <div id="showbuttons">
       <% if (stray.currentlyFostered === false) { %>
@@ -31,7 +30,7 @@
         <button id="foster" type="submit">Foster</button>
       </form>
       <% } else { %>
-      <br><p>Currently <br> Fostered </p>
+      <br><p class="show-p">Currently <br> Fostered </p>
     <% } %>
     <% if(currentUser.Admin === true){  %>
       <form method="Post" action="/strays/<%=stray.id%>?_method=DELETE" method='POST'>
@@ -42,6 +41,7 @@
     <% } %>
   <% } %>
   </div>
-  <% include ../partials/footer.ejs %>
+</div>
+<% include ../partials/footer.ejs %>
   </body>
 </html>

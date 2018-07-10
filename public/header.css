@@ -9,7 +9,6 @@ body {
   margin: 0 auto;
   box-shadow: 0 0 5px black;
   background-color: snow;
-
 }
 
 #header {
@@ -82,7 +81,7 @@ button:hover, #logout:hover {
 
 .footer {
   width: 100%;
-  box-shadow: 0 0 5px black;
+  /* box-shadow: 0 0 5px black; */
   max-width: 1200px;
   font-family: 'Merriweather', serif;
   min-width: 931px;
@@ -98,4 +97,8 @@ button:hover, #logout:hover {
 
 .footer a:hover {
   color: red;
+}
+
+.footer-p {
+  margin: 0;
 }

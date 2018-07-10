@@ -24,7 +24,7 @@
           </div>
       <%  } %>
     </div>
-    <% if(currentUser){ %>
+    <% if(currentUser.Admin === true){ %>
     <a href="/strays/new"><button class="btn" type="button" name="button">New Stray</button></a>
     <% } %>
     <% include ../partials/footer.ejs %>
