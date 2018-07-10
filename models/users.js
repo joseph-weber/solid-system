@@ -5,14 +5,13 @@ const userSchema = Schema({
   username: String,
   password: String,
   name: String,
-  hours: Array,
+  hours: [Number],
   catPref: Boolean,
   dogPref: Boolean,
   fosterAble: Boolean,
-  fostering: Array,
+  fostering: [String],
   Admin: Boolean
 },
-
 {timestamps: true})
 
 const User = mongoose.model('User', userSchema);

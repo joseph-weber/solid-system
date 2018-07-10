@@ -23,9 +23,9 @@ router.get('/new', (req, res)=>{
 });
 
 router.get('/seed', (req, res)=>{
-  Stray.deleteMany({name: 'Patches'}, (err, patches)=>
+  Stray.deleteMany({name: 'Patches', breed: 'Cat'}, (err, patches)=>
 console.log('Patches'));
-  Stray.deleteMany({name: 'Grub'}, (err, grub)=>
+  Stray.deleteMany({name: 'Grub', breed: 'Cat'}, (err, grub)=>
 console.log('Grub'));
   Stray.create(
     [
@@ -92,12 +92,11 @@ router.delete('/:id', (req, res)=>{
 });
 
 router.post('/:id/foster', (req, res)=>{
-  User.findById(req.session.currentuser._id, (err, currentUser)=>{
   Stray.findById(req.params.id, (err, fosterPet)=>{
+    User.update({_id: req.session.currentuser._id}, {$push: {fostering: fosterPet.name}}, (err, currentUser)=>{
     console.log(currentUser);
-    currentUser.fostering.push(fosterPet.name)
     console.log(fosterPet.name);
-    console.log(currentUser.fostering)
+    console.log(currentUser.fostering);
     res.redirect('/strays')
   });
 })
