@@ -22,7 +22,7 @@ const eventSchema = Schema({
   img: String,
   date: String,
   Location: String,
-  attendees: [User],
+  attendees: [User]
 },
 {timestamps: true})
 
