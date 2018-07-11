@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <!-- <link rel="stylesheet" href="/strays_main.css">
-    <link rel="stylesheet" href="/header.css"> -->
+    <link rel="stylesheet" href="/strays_main.css">
+    <link rel="stylesheet" href="/header.css">
     <meta charset="utf-8">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <title></title>
   </head>
   <body>
-
+    <% include ../partials/head.ejs %>
     <h1>Available for Adoption</h1>
     <div class="container">
       <% for(let i = 0; i < strays.length; i++){%>
@@ -30,6 +30,6 @@
           <% } else if (currentUser === undefined) { %>
             <%  console.log('hi') %>
           <% } %>
-
+       <% include ../partials/footer.ejs %>
   </body>
 </html>
