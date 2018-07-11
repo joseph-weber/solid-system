@@ -9,37 +9,39 @@
     <title></title>
   </head>
   <body>
-  <div class="container">
-    <h1><%= stray.name %></h1>
-    <img src="<%=stray.img%>">
-    <ul>
-      <li><%= stray.breed %></li>
-      <li><%= stray.age %></li>
-      <li><%= stray.color %></li>
-      <% if (stray.goodWithChildren === false) { %>
-      <li>Not good with children</li>
-    <% } else { %>
-    <li>Great with children</li>
-  <% } %>
-    </ul>
-    <p class="show-p"><%= stray.description %> </p>
-    <% if(currentUser){ %>
-    <div id="showbuttons">
-      <% if (stray.currentlyFostered === false) { %>
-      <form method="Post" action="/strays/<%=stray.id%>/foster" method='POST'>
-        <button id="foster" type="submit">Foster</button>
-      </form>
+  <div class="show-page">
+    <div class="container">
+      <h1><%= stray.name %></h1>
+      <img src="<%=stray.img%>">
+      <ul>
+        <li><%= stray.breed %></li>
+        <li><%= stray.age %></li>
+        <li><%= stray.color %></li>
+        <% if (stray.goodWithChildren === false) { %>
+        <li>Not good with children</li>
       <% } else { %>
-      <br><p class="show-p">Currently <br> Fostered </p>
+      <li>Great with children</li>
     <% } %>
-    <% if(currentUser.Admin === true){  %>
-      <form method="Post" action="/strays/<%=stray.id%>?_method=DELETE" method='POST'>
-        <button id="strayButton" type="submit">Adopted</button>
-      </form>
+      </ul>
+      <p class="show-p"><%= stray.description %> </p>
+      <% if(currentUser){ %>
+      <div id="showbuttons">
+        <% if (stray.currentlyFostered === false) { %>
+        <form method="Post" action="/strays/<%=stray.id%>/foster" method='POST'>
+          <button id="foster" type="submit">Foster</button>
+        </form>
+        <% } else { %>
+        <br><p class="fostered-p">Currently <br> Fostered </p>
+      <% } %>
+      <% if(currentUser.Admin === true){  %>
+        <form method="Post" action="/strays/<%=stray.id%>?_method=DELETE" method='POST'>
+          <button id="strayButton" type="submit">Adopted</button>
+        </form>
+        <a href="/strays/<%= stray.id %>/edit"><button type="button" name="button">Edit</button></a>
+      </div>
+      <% } %>
+    <% } %>
     </div>
-    <a href="/strays/<%= stray.id %>/edit"><button class="btn" type="button" name="button">Edit</button></a>
-    <% } %>
-  <% } %>
   </div>
 <% include ../partials/footer.ejs %>
   </body>

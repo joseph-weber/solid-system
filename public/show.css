@@ -11,8 +11,9 @@ body {
   flex-direction: column;
   align-items: center;
   background: linear-gradient(white, rgb(158, 220, 249));
-  height: 600px;
+  height: 750px;
   margin: 40px auto;
+  margin-bottom: 40px;
   width: 40%;
   box-shadow: 0 0 5px black;
 }
@@ -30,18 +31,20 @@ div img {
   box-shadow: 0 0 5px black;
 }
 
-/* div {
-  padding: 5px;
-} */
 
 #showbuttons{
   display: flex;
+  width: 200px;
+  flex-flow: wrap;
+  justify-content: center;
 }
 
 #showbuttons button {
-  margin: 10 10px;
+  margin: 10px 10px;
 }
 
-.show-p {
+.fostered-p {
+  text-align: center;
   margin-top: 20px;
+  box-shadow: 0 0 5px black;
 }
