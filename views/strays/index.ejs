@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" href="/strays_main.css">
-    <link rel="stylesheet" href="./header.css">
+    <!-- <link rel="stylesheet" href="/strays_main.css">
+    <link rel="stylesheet" href="/header.css"> -->
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
-    <% include ../partials/head.ejs %>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> -->
     <title></title>
   </head>
   <body>
+
     <h1>Available for Adoption</h1>
     <div class="container">
-      <% console.log(strays) %>
-      <%  for(let i = 0; i < strays.length; i++){%>
+      <% for(let i = 0; i < strays.length; i++){%>
           <div class="content">
           <h2> <%= strays[i].name %> </h2>
           <a href="/strays/<%= strays[i].id %>"><img class="stray-image" src="<%= strays[i].img %>"></a>
@@ -24,9 +23,13 @@
           </div>
       <%  } %>
     </div>
-    <% if(currentUser.Admin === true){ %>
-    <a href="/strays/new"><button class="btn" type="button" name="button">New Stray</button></a>
-    <% } %>
-    <% include ../partials/footer.ejs %>
+    <% if(currentUser){ %>
+      <% if(currentUser.Admin === true){ %>
+      <a href="/strays/new"><button class="btn" type="button" name="button">New Stray</button></a>
+      <% } else { console.log('hello') } %>
+          <% } else if (currentUser === undefined) { %>
+            <%  console.log('hi') %>
+          <% } %>
+
   </body>
 </html>
