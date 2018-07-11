@@ -37,8 +37,10 @@
             <% } else { %>
               <%=user.fostering[i].name%>
             <% } %>
+            <img id="foster-img" src="<%=user.fostering[i].img %>">
           <% } %></li>
           <% } %>
+          <a id="edit-button" href="/users/<%= user.id %>/edit"><button type="button" name="button">Edit<br> Info</button></a>
     </div>
 <% include ../partials/footer.ejs %>
   </body>

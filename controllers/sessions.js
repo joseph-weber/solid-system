@@ -35,15 +35,6 @@ router.get('/:id', (req, res)=>{
 });
 });
 
-router.get('/:id/edit', (req, res)=>{
-  User.findOne({_id: req.params.id}, (err, foundUser)=>{
-  res.render('sessions/edit.ejs',
-  {
-    user: foundUser
-  }
-)
-})
-})
 
 
 router.delete('/', (req, res) => {

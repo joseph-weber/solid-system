@@ -15,7 +15,7 @@ body {
   text-align: left;
 }
 
-#new-volunteer, #new-stray {
+#new-volunteer, #new-stray, #edit-volunteer {
   display: flex;
   flex-direction: column;
   margin: 40px auto;
@@ -123,12 +123,19 @@ input {
   align-items: center;
   box-shadow: 0 0 5px black;
   background: linear-gradient(white, rgb(158, 220, 249));
-  text-align: left;
+  text-align: center;
+  justify-content: center;
+
 }
+
 
 #container ul {
 list-style-type: none;
 padding-left: 0;
+}
+
+#container li {
+  padding: 5px;
 }
 
 #container li {
@@ -168,6 +175,14 @@ text-align: left;
 #user-homepage {
   text-align: center;
 }
+
+#foster-img {
+  width: 100px;
+  height: auto;
+  margin: 45px 0;
+}
+
+
 
 /* body {
   background-color: red;

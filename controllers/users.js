@@ -91,6 +91,19 @@ router.get('/seed', (req, res)=>{
    )
 })
 
+router.get('/:id/edit', (req, res)=>{
+  User.findOne({_id: req.params.id}, (err, foundUser)=>{
+  res.render('users/edit.ejs',
+  {
+    user: foundUser,
+    currentUser: req.session.currentuser
+  }
+)
+})
+})
+
+
+
 
 // router.post('/', (req, res)=>{
 //   req.body.password = bcryptjs.hashSync(req.body.password, bcryptjs.genSaltSync(10));

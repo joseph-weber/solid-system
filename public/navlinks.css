@@ -41,3 +41,9 @@ body {
   width: 90%;
   text-align: left;
 }
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  text-align: center;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/header.css">
+    <% include ../partials/head.ejs %>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="edit-volunteer">
+      <% console.log(user) %>
+      <h2>New Volunteer Info</h2>
+      <div class="volunteer-form">
+        <form action="/users/<%=user.id%>?_method=PUT" method="POST">
+          Username: <input type="text" name="username" placeholder="<%=user.username%>"/>
+          Password: <input type="password" name="password"/>
+          Name: <input type="text" name="name" placeholder="<%=user.name%>"/>
+          Hours: <input type="text" name="hours" placeholder="<%=user.hours%>"/>
+          Work w/ Cats: <input type="checkbox" name="catPref"
+          <% if(user.catPref === true){%>
+          checked
+          <%} else { %>
+            unchecked
+            <%}%>
+          />
+          Work w/ Dogs: <input type="checkbox" name="dogPref"
+          <% if(user.dogPref === true){%>
+          checked
+          <%} else { %>
+            unchecked
+            <%}%>
+            />
+          Will foster? <input type="checkbox"  name="fosterAble"
+          <% if(user.fosterAble === true){%>
+          checked
+          <%} else { %>
+            unchecked
+            <%}%>/>
+          <input id="submit" type="submit" value="submit">
+        </form>
+  </div>
+</div>
+<% include ../partials/footer.ejs %>
+  </body>
+</html>

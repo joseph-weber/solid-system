@@ -33,6 +33,11 @@
   <%   } %>
   <% } %>
   </div>
+  <div id="event">
+    <% for(let i=0; i<events.length; i++){ %>
+      <%=events[i].title%>
+    <% }%>
+
   </div>
     <% include ./partials/footer.ejs %>
 </body>

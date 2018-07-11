@@ -102,3 +102,8 @@ button:hover, #logout:hover {
 .footer-p {
   margin: 0;
 }
+
+.third {
+  width: 32%;
+  text-align: center;
+}
