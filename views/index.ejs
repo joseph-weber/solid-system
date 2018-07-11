@@ -38,7 +38,7 @@
       <div class="event-article">
         <h2><%=events[i].title%></h2>
         <ul>
-          <li><img src="<%=events[i].img%>"/></li>
+          <li><a href="/events/<%=events[i]._id%>"><img src="<%=events[i].img%>"/></a></li>
           <li><%=events[i].paragraph%></li>
           <li>When: <%=events[i].date%></li>
           <li>Where: <%=events[i].Location%></li>

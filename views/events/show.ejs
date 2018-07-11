@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../../header.css">
+        <link rel="stylesheet" href="../../main.css">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+        <title></title>
+    </head>
+    <body>
+      <% include ../partials/head.ejs %>
+      <div id="events">
+        <div class="event-article">
+          <h2><%=event.title%></h2>
+          <ul>
+            <li><img src="<%=event.img%>"/></li>
+            <li><%=event.paragraph%></li>
+            <li>When: <%=event.date%></li>
+            <li>Where: <%=event.Location%></li>
+          </ul>
+        </div>
+    </div>
+<% include ../partials/footer.ejs %>
+  </body>
+</html>

@@ -193,6 +193,7 @@ text-align: left;
 }
 
 .event-article {
+  box-shadow: 0 4px 2px -2px black;
   width: 80%;
   text-align: center;
 }

@@ -45,6 +45,10 @@ app.use('/strays', strayController);
 const sessionsController = require('./controllers/sessions.js');
 app.use('/sessions', sessionsController);
 
+///// Events controller access
+const eventsController = require('./controllers/events.js');
+app.use('/events', eventsController);
+
 
 app.get('/', (req, res)=>{
   Event.find({}, (err, foundEvents)=>{

@@ -22,6 +22,12 @@ body {
   text-align: center;
 }
 
+.donationdiv, #about-us-container p {
+  padding: 20px 40px;
+  line-height: 30px;
+  font-weight: 800;
+}
+
 #donate-buttons {
   display: flex;
   justify-content: center;
