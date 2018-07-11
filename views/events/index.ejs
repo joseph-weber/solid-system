@@ -23,7 +23,14 @@
         </div>
 
       <% }%>
-    </div>  
+    </div>
+    <% if(currentUser){ %>
+      <% if(currentUser.Admin === true){ %>
+      <a href="/events/new"><button class="btn" type="button" name="button">New Event</button></a>
+      <% } else { console.log('hello') } %>
+          <% } else if (currentUser === undefined) { %>
+            <%  console.log('hi') %>
+          <% } %>
       <% include ../partials/footer.ejs %>
   </body>
 </html>

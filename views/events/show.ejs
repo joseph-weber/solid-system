@@ -18,7 +18,18 @@
             <li>When: <%=event.date%></li>
             <li>Where: <%=event.Location%></li>
           </ul>
-          <button>Sign Up</button>
+          <% if(currentUser){ %>
+          <form method="Post" action="/events/<%=event.id%>/attend" method='POST'>
+            <button id="foster" type="submit">Attend</button>
+          </form>
+          <% if(currentUser.Admin === true){  %>
+            <form method="Post" action="/events/<%=event.id%>?_method=DELETE" method='POST'>
+              <button id="eventButton" type="submit">Delete</button>
+            </form>
+            <a href="/events/<%= event.id %>/edit"><button type="button" name="button">Edit</button></a>
+          </div>
+          <% } %>
+          <% } %>
         </div>
     </div>
 <% include ../partials/footer.ejs %>

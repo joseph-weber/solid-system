@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/header.css">
+    <link rel="stylesheet" href="/main.css">
+    <% include ../partials/head.ejs %>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <div id="new-stray">
+      <h1>Input New Event Info</h1>
+      <div id="stray-form">
+        <form class action="/events/<%=event.id%>?_method=PUT" method="POST">
+          Title: <input type="text" name="title" placeholder="<%=event.title%>">
+          Info: <input type="text" name="paragraph" placeholder="<%=event.paragraph%>">
+          Image: <input type="text" name="img" placeholder="<%=event.img%>">
+          Date(mm/dd): <input type="text" name="date" placeholder="<%=event.date%>">
+          Location: <input type="text" name="Location" placeholder="<%=event.Location%>">
+          <input type="submit" value="Edit Event">
+        </form>
+      </div>
+    </div>
+    <% include ../partials/footer.ejs %>
+    </body
+</html>
