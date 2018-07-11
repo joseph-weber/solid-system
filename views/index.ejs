@@ -33,9 +33,18 @@
   <%   } %>
   <% } %>
   </div>
-  <div id="event">
+  <div id="events">
     <% for(let i=0; i<events.length; i++){ %>
-      <%=events[i].title%>
+      <div class="event-article">
+        <h2><%=events[i].title%></h2>
+        <ul>
+          <li><img src="<%=events[i].img%>"/></li>
+          <li><%=events[i].paragraph%></li>
+          <li>When: <%=events[i].date%></li>
+          <li>Where: <%=events[i].Location%></li>
+        </ul>
+      </div>
+
     <% }%>
 
   </div>
