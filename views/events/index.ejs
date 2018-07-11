@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../header.css">
+    <link rel="stylesheet" href="../../main.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <div>
+    <% include ../partials/head.ejs %>
+    <div id="events">
+      <% for(let i=0; i<events.length; i++){ %>
+        <div class="event-article">
+          <h2><%=events[i].title%></h2>
+          <ul>
+            <li><a href="/events/<%=events[i]._id%>"><img src="<%=events[i].img%>"/></a></li>
+            <li><%=events[i].paragraph%></li>
+            <li>When: <%=events[i].date%></li>
+            <li>Where: <%=events[i].Location%></li>
+          </ul>
+        </div>
+
+      <% }%>
+    </div>  
+      <% include ../partials/footer.ejs %>
+  </body>
+</html>
