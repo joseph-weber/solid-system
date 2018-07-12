@@ -9,6 +9,8 @@
   <body>
     <% include ../partials/head.ejs %>
     <div id="container">
+      <%if(currentUser){%>
+      <% if(currentUser.id === user.id){ %>
       <h1><%=user.name%>'s Page</h1>
       <ul>
         <li>Your availability hours are: <%=user.hours%></li>
@@ -44,6 +46,12 @@
           <form method="Post" action="/users/<%=user.id%>?_method=DELETE" method='POST'>
             <button id="userDelete" type="submit">Delete your account</button>
           </form>
+          <% } else { %>
+            <h1> This is not your account page </h1>
+            <% } %>%>
+          <% } else { %>
+            <h1> Please log in to access this page </h1>
+            <% } %>%>
     </div>
 <% include ../partials/footer.ejs %>
   </body>
