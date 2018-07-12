@@ -77,8 +77,8 @@ router.get('/:id', (req, res)=>{
 
 ///// Attempted to update user's account but could not
 router.post('/:id/attend', (req, res)=>{
-  Event.update({_id: req.params.id}, {$pull: {attendees: req.session.currentuser.name}}, (err, grub)=>{
-    Event.update({_id: req.params.id}, {$push: {attendees: req.session.currentuser.name}},  (err, attendee)=>{
+  Event.update({_id: req.params.id}, {$pull: {attendees: req.session.currentuser}}, (err, grub)=>{
+    Event.update({_id: req.params.id}, {$push: {attendees: req.session.currentuser}},  (err, attendee)=>{
       User.update({username: req.session.currentuser}, {$pull: {events: Event.req.params.id.title}}, (err, updatedUserPull)=>{
         console.log(eventToManipulate.title);
         User.update({username: req.session.currentuser}, {$push: {events: Event.req.params.id.title}}, (err, updatedUserPush)=>{

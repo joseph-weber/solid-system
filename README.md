@@ -16,7 +16,7 @@ This app helps run and manage a animal shelter. This includes, storing and displ
 
 ### User Stories
 1. The website has been great. I love the way that it gives me a safe and secure way to run my animal shelter. I definitely enjoy the interface. - JF
-2. It makes things so easy to volunteer. - JF
+2. It makes things so easy to volunteer. - ZF
 
 ### Unsolved Problems/Future Development
 1. Store more information related to events. Store events attended in a particular user's document

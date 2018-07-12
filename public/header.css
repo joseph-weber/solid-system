@@ -5,10 +5,11 @@ html {
 body {
   max-width: 1200px;
   font-family: 'Merriweather', serif;
-  min-width: 931px;
+  /* min-width: 931px; */
   margin: 0 auto;
   box-shadow: 0 0 5px black;
   background-color: snow;
+  flex-flow: wrap;
 }
 
 #header {
@@ -17,7 +18,6 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 1200px;
-  min-width: 931px;
   justify-content: center;
   margin: 0 auto;
   background: url('https://www.bevlabvet.com/images/banner-img.jpg');
@@ -80,14 +80,17 @@ button:hover, #logout:hover {
 }
 
 .footer {
-  width: 100%;
-  /* box-shadow: 0 0 5px black; */
   max-width: 1200px;
   font-family: 'Merriweather', serif;
-  min-width: 931px;
+  /* min-width: 931px; */
+  margin: 0 auto;
+  box-shadow: 0 0 5px black;
+  display: flex;
+  flex-flow: wrap;
+  max-width: 1200px;
+  font-family: 'Merriweather', serif;
   color: white;
   background-color: black;
-  display: flex;
   justify-content: space-around;
 }
 
