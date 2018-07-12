@@ -4,6 +4,10 @@ const bcryptjs = require('bcryptjs');
 const Stray = require('../models/strays.js');
 const User = require('../models/users.js');
 
+
+
+
+///// Strays Index
 router.get('/', (req, res)=>{
   Stray.find({}, (err, foundStrays)=>{
   res.render('strays/index.ejs',
@@ -14,6 +18,7 @@ router.get('/', (req, res)=>{
 });
 });
 
+///// New page for Strays
 router.get('/new', (req, res)=>{
   res.render('strays/new.ejs',
   {
@@ -22,6 +27,7 @@ router.get('/new', (req, res)=>{
 );
 });
 
+///// Seed route for Strays
 router.get('/seed', (req, res)=>{
   Stray.deleteMany({name: 'Patches', breed: 'Cat'}, (err, patches)=>
 console.log('Patches'));
@@ -80,6 +86,8 @@ console.log('Grub'));
      )
    });
 
+
+///// Show page for strays
 router.get('/:id', (req, res)=>{
   Stray.findOne({_id: req.params.id}, (err, foundStray)=>{
   res.render('strays/show.ejs',
@@ -91,6 +99,8 @@ router.get('/:id', (req, res)=>{
 })
 });
 
+
+//// Edit page for Strays
 router.get('/:id/edit', (req, res)=>{
   Stray.findOne({_id: req.params.id}, (err, foundStray)=>{
     res.render('strays/edit.ejs',
@@ -102,25 +112,29 @@ router.get('/:id/edit', (req, res)=>{
 });
 });
 
+///// Update route for strays
 router.put('/:id', (req, res)=>{
   Stray.findOneAndUpdate({_id: req.params.id}, req.body, {new:true}, (err, updatedItem)=>{
     res.redirect('/strays')
 });
 });
 
-
+/////// Create route for strays
 router.post('/', (req, res)=>{
   Stray.create(req.body, (err, newStray)=>{
     res.redirect('/');
   })
 });
 
+/////// Delete route for strays
 router.delete('/:id', (req, res)=>{
   Stray.findByIdAndRemove(req.params.id, (err, deletedItem)=>{
     res.redirect('/strays')
   });
 });
 
+
+/////// Fostered route for Strays
 router.post('/:id/foster', (req, res)=>{
   Stray.findOneAndUpdate({_id: req.params.id}, {$set: {currentlyFostered: true}},  (err, fosterPet)=>{
     User.update({_id: req.session.currentuser._id}, {$push: {fostering: fosterPet}}, (err, currentUser)=>{

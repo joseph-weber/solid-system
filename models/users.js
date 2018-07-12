@@ -1,18 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Events = require('./events.js');
 
 
-const Stray = new Schema({
-  name: String,
-  breed: String,
-  age: Number,
-  goodWithChildren: Boolean,
-  color: String,
-  img: String,
-  description: String,
-  currentlyFostered: Boolean
-},
-{timestamps: true})
 
 const userSchema = Schema({
   username: String,
@@ -22,8 +12,9 @@ const userSchema = Schema({
   catPref: Boolean,
   dogPref: Boolean,
   fosterAble: Boolean,
-  fostering: [Stray],
-  Admin: Boolean
+  fostering: Array,
+  Admin: Boolean,
+  events: [String]
 },
 {timestamps: true})
 

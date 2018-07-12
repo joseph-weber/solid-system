@@ -1,19 +1,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const User = require('./users.js');
 
-const User = new Schema({
-  username: String,
-  password: String,
-  name: String,
-  hours: [Number],
-  catPref: Boolean,
-  dogPref: Boolean,
-  fosterAble: Boolean,
-  fostering: Array,
-  Admin: Boolean
-},
-{timestamps: true})
-
+// const User = new Schema({
+//   username: String,
+//   password: String,
+//   name: String,
+//   hours: [Number],
+//   catPref: Boolean,
+//   dogPref: Boolean,
+//   fosterAble: Boolean,
+//   fostering: Array,
+//   Admin: Boolean,
+//   events: Array
+// },
+// {timestamps: true})
+//
 
 
 const eventSchema = Schema({
@@ -22,7 +24,7 @@ const eventSchema = Schema({
   img: String,
   date: String,
   Location: String,
-  attendees: [String]
+  attendees: [User]
 },
 {timestamps: true})
 

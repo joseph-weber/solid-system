@@ -3,7 +3,7 @@ const router = express.Router();
 const bcryptjs = require('bcryptjs');
 const User = require('../models/users.js');
 
-
+////// Users new page
 router.get('/new', (req, res)=>{
   res.render('users/new.ejs',
   {
@@ -12,6 +12,7 @@ router.get('/new', (req, res)=>{
 );
 });
 
+////// Users new route
 router.post('/', (req, res) => {
   // console.log(req.body);
   if(req.body.catPref === "on"){
@@ -37,6 +38,7 @@ router.post('/', (req, res) => {
   })
 });
 
+////// Users Seed route
 router.get('/seed', (req, res)=>{
   User.create(
     [
@@ -49,7 +51,8 @@ router.get('/seed', (req, res)=>{
       dogPref: false,
       fosterAble: true,
       fostering: [],
-      Admin: true
+      Admin: true,
+      events: []
     },
     {
       username: 'Jackattack713',
@@ -60,7 +63,8 @@ router.get('/seed', (req, res)=>{
       dogPref: true,
       fosterAble: true,
       fostering: [],
-      Admin: true
+      Admin: true,
+      events: []
     },
     {
       username: 'westsidestory4eva',
@@ -71,7 +75,8 @@ router.get('/seed', (req, res)=>{
       dogPref: true,
       fosterAble: true,
       fostering: [],
-      Admin: false
+      Admin: false,
+      events: []
     },
     {
       username: 'canyouhangtonight',
@@ -82,7 +87,8 @@ router.get('/seed', (req, res)=>{
       dogPref: false,
       fosterAble: false,
       fostering: [],
-      Admin: false
+      Admin: false,
+      events: []
     }
   ],
   (err, data)=>{
@@ -91,6 +97,8 @@ router.get('/seed', (req, res)=>{
    )
 })
 
+
+////// Users Edit/Update route
 router.get('/:id/edit', (req, res)=>{
   User.findOne({_id: req.params.id}, (err, foundUser)=>{
   res.render('users/edit.ejs',
