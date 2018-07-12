@@ -110,6 +110,15 @@ router.get('/:id/edit', (req, res)=>{
 })
 })
 
+/////// Delete route for strays
+router.delete('/:id', (req, res)=>{
+  req.session.destroy(()=>{
+  User.findByIdAndRemove(req.params.id, (err, deletedItem)=>{
+    res.redirect('/')
+  });
+  });
+});
+
 
 
 

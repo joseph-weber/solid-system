@@ -41,6 +41,9 @@
           <% } %></li>
           <% } %>
           <a id="edit-button" href="/users/<%= user.id %>/edit"><button type="button" name="button">Edit<br> Info</button></a>
+          <form method="Post" action="/users/<%=user.id%>?_method=DELETE" method='POST'>
+            <button id="userDelete" type="submit">Delete your account</button>
+          </form>
     </div>
 <% include ../partials/footer.ejs %>
   </body>
