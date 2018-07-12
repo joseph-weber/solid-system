@@ -10,6 +10,13 @@ This app helps run and manage a animal shelter. This includes, storing and displ
 4. Html/CSS/JavaScript
 5. Express
 6. Heroku
+7. Mongoose
+8. EJS
+
+
+### User Stories
+1. The website has been great. I love the way that it gives me a safe and secure way to run my animal shelter. I definitely enjoy the interface. - JF
+2. It makes things so easy to volunteer. - JF
 
 ### Unsolved Problems/Future Development
 1. Store more information related to events. Store events attended in a particular user's document
