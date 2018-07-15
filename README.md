@@ -1,7 +1,7 @@
 ## Pawsibilities - An animal shelter
 
 ### Description of App
-This app helps run and manage a animal shelter. This includes, storing and displaying information on volunteers, animals and events. The website has a secure and encrypted log-in and admin account privileges, allowing for all of the information in the database to be updated and corrected as needed. The general user can create an account, log-in, sign up for events, foster a pet and interact with their own homepage. The Admin can edit the pet/event information, delete pets/events from the database, and create new pets/events.
+This app helps run and manage an animal shelter. This includes, storing and displaying information on volunteers, animals and events. The website has a secure and encrypted log-in and admin account privileges, allowing for all of the information in the database to be updated and corrected as needed. The general user can create an account, log-in, sign up for events, foster a pet and interact with their own homepage. The Admin can edit the pet/event information, delete pets/events from the database, and create new pets/events.
 
 ### Technologies Used
 1. Node.js    
